@@ -1,0 +1,63 @@
+export const SITE = {
+  name: "Télé École",
+  tagline: "la télé 100% éducation",
+  url: "https://tele-ecole.tv",
+  canonical: "https://aide.tele-ecole.tv",
+  description:
+    "Télé École a brûlé. Participez à la reconstruction de la 1re télévision éducative d'Afrique via Wave, Orange Money ou virement bancaire.",
+  phone: "+221 33 867 06 07",
+  phoneHref: "tel:+221338670607",
+  email: "info@tele-ecole.tv",
+  address: "Sicap Sacré Cœur 3, Villa N° 10010, Dakar",
+} as const;
+
+export const COPY = {
+  kicker: "1re Télévision éducative d'Afrique · 100% gratuite",
+  h1Line1: "Télé École a brûlé.",
+  h1Line2: "Nous allons la reconstruire.",
+  urgency:
+    "13 ans d'investissements pour l'éducation et le développement partis en fumée.",
+  cta: "Je participe",
+  participateTitle: "Je participe",
+  scanHint: "Scannez ou ouvrez l'application",
+  waveCta: "Participer via Wave",
+  orangeCta: "Participer via Orange Money",
+  bankSummary: "Autre moyen : virement bancaire — Coris Bank",
+  bankSummaryShort: "Autre moyen : virement bancaire",
+  copyIban: "Copier l'IBAN",
+  copied: "Copié",
+  audiences: "Élèves · Étudiants · Enseignants · Parents",
+  signatureDesktop:
+    "Une conscience citoyenne pour préserver un bien commun.",
+  signatureMobile:
+    "Ensemble, reconstruisons Télé École pour continuer à éduquer, informer et transformer des vies.",
+  campaignSignature: "TÉLÉ ÉCOLE, la télé 100% éducation",
+  shareWhatsApp: "Partager cette campagne sur WhatsApp",
+  footerValues: "Télé École – Éducation · Innovation · Impact",
+  footerThanks: "Merci pour votre soutien.",
+} as const;
+
+export const AMOUNTS = [
+  {
+    icon: "africa" as const,
+    amount: "1 000 F CFA",
+    label: "Sénégal & Afrique",
+  },
+  {
+    icon: "globe" as const,
+    amount: "10 € / 10 $",
+    label: "étranger",
+  },
+  {
+    icon: "heart" as const,
+    amount: "Montant libre",
+    label: "Ou le montant de votre choix",
+  },
+] as const;
+
+export function getWhatsAppShareUrl(pageUrl: string) {
+  const text = encodeURIComponent(
+    `${COPY.h1Line1} ${COPY.h1Line2} ${pageUrl}`,
+  );
+  return `https://wa.me/?text=${text}`;
+}
