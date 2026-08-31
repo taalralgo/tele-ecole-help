@@ -9,6 +9,12 @@ export const SITE = {
   phoneHref: "tel:+221338670607",
   email: "info@tele-ecole.tv",
   address: "Sicap Sacré Cœur 3, Villa N° 10010, Dakar",
+  socials: {
+    facebook: "https://www.facebook.com/teleecole/",
+    instagram: "https://www.instagram.com/tele_ecole",
+    x: "https://x.com/teleecole",
+    youtube: "https://www.youtube.com/channel/UCHTvrKUS9xiof9Y9UKODAEg",
+  },
 } as const;
 
 export const COPY = {

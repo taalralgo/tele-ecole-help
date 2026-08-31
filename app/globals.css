@@ -1146,7 +1146,7 @@ body {
     gap: 16px;
   }
 
-  .campaign-footer__socials span {
+  .campaign-footer__socials a {
     display: inline-flex;
     width: 28px;
     height: 28px;
@@ -1158,6 +1158,13 @@ body {
     font-size: 14px;
     font-weight: 800;
     line-height: 1;
+    text-decoration: none;
+  }
+
+  .campaign-footer__social-icon {
+    width: 17px;
+    height: 17px;
+    color: #fff;
   }
 }
 
