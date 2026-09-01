@@ -1,9 +1,27 @@
+function resolveCampaignUrl() {
+  const fromEnv = process.env.NEXT_PUBLIC_CAMPAIGN_URL?.trim();
+  if (fromEnv) {
+    return fromEnv.replace(/\/+$/, "");
+  }
+
+  const vercelProduction = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  if (vercelProduction) {
+    return `https://${vercelProduction.replace(/^https?:\/\//, "").replace(/\/+$/, "")}`;
+  }
+
+  const vercelUrl = process.env.VERCEL_URL?.trim();
+  if (vercelUrl) {
+    return `https://${vercelUrl.replace(/\/+$/, "")}`;
+  }
+
+  return "https://aide.tele-ecole.tv";
+}
+
 export const SITE = {
   name: "Télé École",
   tagline: "la télé 100% éducation",
   url: "https://tele-ecole.tv",
-  canonical:
-    process.env.NEXT_PUBLIC_CAMPAIGN_URL || "https://aide.tele-ecole.tv",
+  canonical: resolveCampaignUrl(),
   description:
     "Télé École a brûlé. Participez à la reconstruction de la 1re télévision éducative d'Afrique via Wave, Orange Money ou virement bancaire.",
   phone: "+221 33 867 06 07",
@@ -18,7 +36,7 @@ export const SITE = {
   },
 } as const;
 
-export const CAMPAIGN_TITLE = `${SITE.name} a brûlé — Reconstruisons-la ensemble`;
+export const CAMPAIGN_TITLE = `${SITE.name} a brûlé - Reconstruisons-la ensemble`;
 
 export function getCampaignUrl() {
   return SITE.canonical.replace(/\/+$/, "");
@@ -31,11 +49,12 @@ export const COPY = {
   urgency:
     "13 ans d'investissements pour l'éducation et le développement partis en fumée.",
   cta: "Je participe",
+  contactNav: "Contact",
   participateTitle: "Je participe",
   scanHint: "Scannez ou ouvrez l'application",
   waveCta: "Participer via Wave",
   orangeCta: "Participer via Orange Money",
-  bankSummary: "Autre moyen : virement bancaire — Coris Bank",
+  bankSummary: "Autre moyen : virement bancaire - Coris Bank",
   bankSummaryShort: "Autre moyen : virement bancaire",
   copyIban: "Copier l'IBAN",
   copied: "Copié",

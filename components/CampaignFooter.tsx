@@ -9,7 +9,7 @@ import {
 
 export function CampaignFooter() {
   return (
-    <footer className="campaign-footer">
+    <footer id="footer" className="campaign-footer">
       <div className="campaign-footer__inner">
         <div className="campaign-footer__contacts">
           <a href={SITE.phoneHref} className="campaign-footer__contact">

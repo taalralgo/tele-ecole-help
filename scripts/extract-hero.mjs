@@ -85,11 +85,27 @@ await sharp(path.join(root, "design-reference/mockups/desktop.png"))
   .webp({ quality: 88 })
   .toFile(path.join(root, "public/campaign/hero-approved.webp"));
 
-// OG image from official poster
-await sharp(path.join(root, "design-reference/source/help.jpeg"))
-  .resize(1200, 630, { fit: "cover", position: "centre" })
-  .webp({ quality: 85 })
-  .toFile(path.join(root, "public/campaign/og.webp"));
+// OG image from official poster (JPG for Teams/LinkedIn, WebP for the site)
+const ogSource = path.join(root, "design-reference/source/help.jpeg");
+const ogExists = await import("node:fs/promises").then(({ access }) =>
+  access(ogSource).then(() => true).catch(() => false),
+);
+
+if (ogExists) {
+  await sharp(ogSource)
+    .resize(1200, 630, { fit: "cover", position: "centre" })
+    .jpeg({ quality: 88 })
+    .toFile(path.join(root, "public/campaign/og.jpg"));
+
+  await sharp(ogSource)
+    .resize(1200, 630, { fit: "cover", position: "centre" })
+    .webp({ quality: 85 })
+    .toFile(path.join(root, "public/campaign/og.webp"));
+} else {
+  await sharp(path.join(root, "public/campaign/og.webp"))
+    .jpeg({ quality: 88 })
+    .toFile(path.join(root, "public/campaign/og.jpg"));
+}
 
 // Square crop of Wave QR for card display
 await sharp(path.join(root, "design-reference/source/qrcode_wave.jpeg"))

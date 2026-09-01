@@ -8,7 +8,7 @@ export function StickyHeader() {
       <div className="site-header__inner">
         <Link
           href="/"
-          aria-label="Télé École — accueil"
+          aria-label="Télé École - accueil"
           className="site-header__brand"
         >
           <Image
@@ -21,10 +21,10 @@ export function StickyHeader() {
           />
         </Link>
         <a
-          href="#participer"
+          href="#footer"
           className="site-header__cta font-display"
         >
-          {COPY.cta}
+          {COPY.contactNav}
         </a>
       </div>
     </header>

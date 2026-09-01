@@ -652,6 +652,7 @@ body {
 
 .campaign-footer {
   height: 56px;
+  scroll-margin-top: 68px;
   background: linear-gradient(110deg, #282b7d 0%, #252d7e 65%, #18256d 100%);
   color: #fff;
 }
@@ -1149,6 +1150,7 @@ body {
 
   .campaign-footer {
     height: 55px;
+    scroll-margin-top: 76px;
     background: linear-gradient(110deg, #f2effb, #e7e1f7);
     color: #252a80;
   }
