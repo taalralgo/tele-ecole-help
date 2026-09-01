@@ -12,10 +12,10 @@ export function StickyHeader() {
           className="site-header__brand"
         >
           <Image
-            src="/brand/logo-tele-ecole.png"
+            src="/campaign/campaign-logo.webp"
             alt={SITE.name}
-            width={250}
-            height={81}
+            width={570}
+            height={145}
             className="site-header__logo"
             priority
           />

@@ -69,7 +69,7 @@ export function PaymentCard({
           <Image
             src="/qr/wave.jpeg"
             alt={qrAlt}
-            width={126}
+            width={155}
             height={175}
             className="payment-card__wave-sheet"
           />

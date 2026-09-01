@@ -8,10 +8,14 @@ import { StickyHeader } from "@/components/StickyHeader";
 export default function Home() {
   return (
     <>
-      <StickyHeader />
       <main>
-        <Hero />
-        <DonationAmounts />
+        <div className="campaign-intro">
+          <div className="campaign-intro__responsive">
+            <StickyHeader />
+            <Hero />
+            <DonationAmounts />
+          </div>
+        </div>
         <ParticipateSection />
         <CampaignClose />
       </main>

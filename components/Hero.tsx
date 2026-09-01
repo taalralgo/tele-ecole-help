@@ -1,61 +1,52 @@
 import Image from "next/image";
 import { COPY } from "@/lib/site";
-import { IconArrowRight } from "@/components/icons";
 
 export function Hero() {
   return (
     <section className="campaign-hero">
-      <div className="campaign-hero__mobile-image">
-        <Image
-          src="/campaign/hero-approved.webp"
-          alt=""
-          fill
-          className="campaign-hero__image"
-          priority
-          unoptimized
-          sizes="58vw"
-        />
-        <div className="campaign-hero__mobile-shade" />
-      </div>
-
       <div className="campaign-hero__inner">
         <div className="campaign-hero__copy">
           <p className="campaign-hero__kicker font-display">
             {COPY.kicker}
           </p>
-          <div className="campaign-hero__statement">
-            <h1 className="campaign-hero__title font-display">
-              <span>{COPY.h1Line1}</span>{" "}
-              <span className="campaign-hero__title-accent">{COPY.h1Line2}</span>
-            </h1>
-            <p className="campaign-hero__urgency">
-              {COPY.urgency}{" "}
-              <span className="campaign-hero__mobile-extra">
-                Aidez-nous à rallumer l&apos;espoir.
-              </span>
-            </p>
-          </div>
+          <h1 className="sr-only">
+            Télé École a brûlé. Nous allons la reconstruire.
+          </h1>
+          <Image
+            src="/campaign/hero-title.webp"
+            alt=""
+            aria-hidden="true"
+            width={770}
+            height={285}
+            className="campaign-hero__title-art"
+            priority
+          />
+          <p className="campaign-hero__urgency">
+            <span>13 ans d’investissements pour l’éducation et</span>{" "}
+            <span>le développement en fumée. Aidez-nous à</span>{" "}
+            <span>rallumer l’espoir.</span>
+          </p>
           <a
             href="#participer"
             className="campaign-hero__cta font-display"
           >
             {COPY.cta}
-            <IconArrowRight className="campaign-hero__arrow" />
           </a>
         </div>
-
-        <div className="campaign-hero__desktop-image">
-          <Image
-            src="/campaign/hero-approved.webp"
-            alt="Élève assis dans le studio Télé École incendié"
-            fill
-            className="campaign-hero__image"
-            priority
-            unoptimized
-            sizes="(min-width: 900px) 50vw, 100vw"
-          />
-        </div>
       </div>
+
+      <div className="campaign-hero__visual">
+        <Image
+          src="/campaign/hero-scene.webp?v=1"
+          alt="Élève assis dans le studio Télé École incendié"
+          fill
+          className="campaign-hero__image"
+          priority
+          unoptimized
+          sizes="(min-width: 900px) 560px, 100vw"
+        />
+      </div>
+      <div className="campaign-hero__shade" />
     </section>
   );
 }
