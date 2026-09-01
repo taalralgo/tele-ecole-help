@@ -18,6 +18,12 @@ export const SITE = {
   },
 } as const;
 
+export const CAMPAIGN_TITLE = `${SITE.name} a brûlé — Reconstruisons-la ensemble`;
+
+export function getCampaignUrl() {
+  return SITE.canonical.replace(/\/+$/, "");
+}
+
 export const COPY = {
   kicker: "1re Télévision éducative d'Afrique · 100% gratuite",
   h1Line1: "Télé École a brûlé.",

@@ -76,6 +76,9 @@ await sharp(campaignLogo.data, {
   .webp({ quality: 96, alphaQuality: 100 })
   .toFile(path.join(root, "public/campaign/campaign-logo.webp"));
 
+const { writeFavicons } = await import("./extract-favicon.mjs");
+await writeFavicons();
+
 // Crop the hero photo panel from the validated desktop mockup (right column).
 await sharp(path.join(root, "design-reference/mockups/desktop.png"))
   .extract({ left: 780, top: 120, width: 680, height: 345 })

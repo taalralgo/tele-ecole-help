@@ -9,6 +9,7 @@
     "lint": "eslint",
     "assets:qr": "node scripts/decode-qr.mjs",
     "assets:hero": "node scripts/extract-hero.mjs",
+    "assets:favicon": "node scripts/extract-favicon.mjs",
     "assets": "npm run assets:qr && npm run assets:hero"
   },
   "dependencies": {

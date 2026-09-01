@@ -1,22 +1,29 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/montserrat";
-import { SITE } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { CAMPAIGN_TITLE, SITE, getCampaignUrl } from "@/lib/site";
 import "./globals.css";
 
+const campaignUrl = getCampaignUrl();
+
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.canonical),
-  title: `${SITE.name} a brûlé — Reconstruisons-la ensemble`,
+  metadataBase: new URL(campaignUrl),
+  title: CAMPAIGN_TITLE,
   description: SITE.description,
+  robots: {
+    index: true,
+    follow: true,
+  },
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "fr_SN",
-    url: SITE.canonical,
+    url: campaignUrl,
     siteName: SITE.name,
-    title: `${SITE.name} a brûlé — Reconstruisons-la ensemble`,
+    title: CAMPAIGN_TITLE,
     description: SITE.description,
     images: [
       {
@@ -29,16 +36,23 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} a brûlé — Reconstruisons-la ensemble`,
+    title: CAMPAIGN_TITLE,
     description: SITE.description,
     images: ["/campaign/og.webp"],
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#0e2366",
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="fr" className="h-full">
-      <body className="min-h-full antialiased">{children}</body>
+      <body className="min-h-full antialiased">
+        <JsonLd />
+        {children}
+      </body>
     </html>
   );
 }
