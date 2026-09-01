@@ -17,7 +17,7 @@ export function getCampaignJsonLd() {
         email: SITE.email,
         telephone: SITE.phone,
         logo: `${origin}/brand/icon.png`,
-        image: `${origin}/campaign/og.jpg`,
+        image: `${origin}/campaign/hero.jpeg`,
         address: {
           "@type": "PostalAddress",
           streetAddress: "Sicap Sacré Cœur 3, Villa N° 10010",
@@ -45,7 +45,7 @@ export function getCampaignJsonLd() {
         about: { "@id": organizationId },
         primaryImageOfPage: {
           "@type": "ImageObject",
-          url: `${origin}/campaign/og.jpg`,
+          url: `${origin}/campaign/hero.jpeg`,
         },
         potentialAction: { "@id": `${origin}/#donate` },
       },

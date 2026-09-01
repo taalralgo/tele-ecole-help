@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     description: SITE.description,
     images: [
       {
-        url: "/campaign/og.jpg",
-        width: 1200,
-        height: 630,
+        url: "/campaign/hero.jpeg",
+        width: 1580,
+        height: 995,
         alt: "Campagne de reconstruction Télé École",
         type: "image/jpeg",
       },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: CAMPAIGN_TITLE,
     description: SITE.description,
-    images: ["/campaign/og.jpg"],
+    images: ["/campaign/hero.jpeg"],
   },
 };
 
