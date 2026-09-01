@@ -14,7 +14,7 @@ function resolveCampaignUrl() {
     return `https://${vercelUrl.replace(/\/+$/, "")}`;
   }
 
-  return "https://aide.tele-ecole.tv";
+  return "https://tele-ecole.vercel.app";
 }
 
 export const SITE = {
