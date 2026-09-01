@@ -16,6 +16,23 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## URL publique de la campagne
+
+Le partage WhatsApp détecte automatiquement l’URL actuellement ouverte dans le
+navigateur. Une URL publique de repli peut être configurée au moment du build :
+
+```bash
+cp .env.example .env.local
+```
+
+Puis renseigner :
+
+```dotenv
+NEXT_PUBLIC_CAMPAIGN_URL=https://votre-domaine.example
+```
+
+Cette valeur sert également d’URL canonique pour les métadonnées.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

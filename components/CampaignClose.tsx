@@ -1,14 +1,8 @@
-import Link from "next/link";
-import { COPY, getWhatsAppShareUrl } from "@/lib/site";
-import { IconHeart, IconWhatsApp } from "@/components/icons";
+import { COPY } from "@/lib/site";
+import { IconHeart } from "@/components/icons";
+import { WhatsAppShareLink } from "@/components/WhatsAppShareLink";
 
-type CampaignCloseProps = {
-  shareUrl: string;
-};
-
-export function CampaignClose({ shareUrl }: CampaignCloseProps) {
-  const whatsAppUrl = getWhatsAppShareUrl(shareUrl);
-
+export function CampaignClose() {
   return (
     <section className="campaign-close">
       <div className="campaign-close__inner">
@@ -25,15 +19,9 @@ export function CampaignClose({ shareUrl }: CampaignCloseProps) {
           </p>
           <p className="campaign-close__slogan">{COPY.campaignSignature}</p>
         </div>
-        <Link
-          href={whatsAppUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="campaign-close__share"
-        >
-          <IconWhatsApp className="campaign-close__whatsapp" />
-          {COPY.shareWhatsApp}
-        </Link>
+        <WhatsAppShareLink
+          fallbackUrl={process.env.NEXT_PUBLIC_CAMPAIGN_URL}
+        />
       </div>
     </section>
   );

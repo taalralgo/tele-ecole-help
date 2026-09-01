@@ -2,7 +2,8 @@ export const SITE = {
   name: "Télé École",
   tagline: "la télé 100% éducation",
   url: "https://tele-ecole.tv",
-  canonical: "https://aide.tele-ecole.tv",
+  canonical:
+    process.env.NEXT_PUBLIC_CAMPAIGN_URL || "https://aide.tele-ecole.tv",
   description:
     "Télé École a brûlé. Participez à la reconstruction de la 1re télévision éducative d'Afrique via Wave, Orange Money ou virement bancaire.",
   phone: "+221 33 867 06 07",
@@ -61,9 +62,9 @@ export const AMOUNTS = [
   },
 ] as const;
 
-export function getWhatsAppShareUrl(pageUrl: string) {
+export function getWhatsAppShareUrl(pageUrl?: string) {
   const text = encodeURIComponent(
-    `${COPY.h1Line1} ${COPY.h1Line2} ${pageUrl}`,
+    [COPY.h1Line1, COPY.h1Line2, pageUrl].filter(Boolean).join(" "),
   );
   return `https://wa.me/?text=${text}`;
 }

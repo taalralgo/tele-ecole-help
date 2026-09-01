@@ -8,14 +8,41 @@ import { IconBank, IconChevronDown } from "@/components/icons";
 export function BankTransfer() {
   const [copied, setCopied] = useState(false);
 
-  async function handleCopy() {
+  function copyWithSelection(value: string) {
+    const textarea = document.createElement("textarea");
+    textarea.value = value;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.inset = "0 auto auto 0";
+    textarea.style.opacity = "0";
+    textarea.style.pointerEvents = "none";
+    document.body.appendChild(textarea);
+    textarea.select();
+    textarea.setSelectionRange(0, value.length);
+
     try {
-      await navigator.clipboard.writeText(IBAN);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      setCopied(false);
+      return document.execCommand("copy");
+    } finally {
+      document.body.removeChild(textarea);
     }
+  }
+
+  async function handleCopy() {
+    let succeeded = false;
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(IBAN);
+        succeeded = true;
+      } else {
+        succeeded = copyWithSelection(IBAN);
+      }
+    } catch {
+      succeeded = copyWithSelection(IBAN);
+    }
+
+    setCopied(succeeded);
+    if (succeeded) window.setTimeout(() => setCopied(false), 2000);
   }
 
   return (

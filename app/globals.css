@@ -1209,3 +1209,609 @@ body {
     opacity: 0.78;
   }
 }
+
+/* Real-device responsive refinements ------------------------------------- */
+
+
+@media (min-width: 600px) and (max-width: 899px) {
+  body {
+    background: #282b7d;
+  }
+
+  .site-header {
+    height: 64px;
+  }
+
+  .site-header__inner {
+    padding: 0 32px;
+  }
+
+  .site-header__logo {
+    width: 160px;
+  }
+
+  .site-header__cta {
+    width: 130px;
+    height: 42px;
+    border-radius: 9px;
+    font-size: 15px;
+  }
+
+  .campaign-hero {
+    height: 300px;
+  }
+
+  .campaign-hero__mobile-image {
+    left: 44%;
+  }
+
+  .campaign-hero__copy {
+    width: 58%;
+    padding: 18px 0 0 32px;
+  }
+
+  .campaign-hero__kicker {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .campaign-hero__statement {
+    margin-top: 10px;
+  }
+
+  .campaign-hero__title {
+    font-size: 38px;
+    line-height: 1.07;
+  }
+
+  .campaign-hero__urgency {
+    width: 360px;
+    margin-top: 10px;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .campaign-hero__cta {
+    width: 260px;
+    height: 45px;
+    margin-top: 12px;
+    border-radius: 9px;
+    font-size: 16px;
+  }
+
+  .donation-amounts {
+    height: 64px;
+  }
+
+  .donation-amounts__inner {
+    width: calc(100% - 96px);
+    max-width: 640px;
+    padding-top: 9px;
+    gap: 10px;
+  }
+
+  .donation-amount {
+    height: 46px;
+    border-radius: 9px;
+  }
+
+  .donation-amount__value {
+    font-size: 16px;
+  }
+
+  .participate {
+    min-height: 430px;
+    padding: 16px 0 8px;
+    scroll-margin-top: 64px;
+  }
+
+  .participate__inner {
+    width: calc(100% - 72px);
+    max-width: 760px;
+  }
+
+  .participate__title {
+    height: 36px;
+    font-size: 27px;
+    line-height: 36px;
+  }
+
+  .participate__cards {
+    margin-top: 10px;
+    gap: 12px;
+  }
+
+  .payment-card {
+    height: 140px;
+    padding: 10px;
+    border-radius: 13px;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .payment-card--orange {
+    height: 144px;
+  }
+
+  .payment-card__mobile-visual {
+    grid-template-columns: 100px 124px;
+    gap: 16px;
+  }
+
+  .payment-brand {
+    height: 120px;
+    border-radius: 11px;
+  }
+
+  .wave-penguin {
+    width: 34px;
+    height: 64px;
+    background-position: -18px -6px;
+    background-size: 170px auto;
+  }
+
+  .wave-word {
+    font-size: 25px;
+    line-height: 27px;
+  }
+
+  .orange-logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .orange-word {
+    margin-top: -4px;
+    font-size: 14px;
+    line-height: 13px;
+  }
+
+  .payment-card__qr {
+    width: 120px;
+    height: 120px;
+    padding: 6px;
+    border-radius: 10px;
+  }
+
+  .payment-card__content {
+    padding-top: 8px;
+  }
+
+  .payment-card__title {
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  .payment-card__description {
+    max-width: 360px;
+    margin-top: 7px;
+    font-size: 12.5px;
+    line-height: 1.35;
+  }
+
+  .payment-card__button {
+    height: 42px;
+    border-radius: 9px;
+    font-size: 15px;
+  }
+
+  .participate__bank {
+    margin-top: 10px;
+  }
+
+  .bank-transfer__summary {
+    height: 50px;
+    padding: 0 18px;
+  }
+
+  .bank-transfer__label {
+    gap: 13px;
+  }
+
+  .bank-transfer__icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .bank-transfer__bank-svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .bank-transfer__text {
+    font-size: 15px;
+  }
+
+  .bank-transfer__chevron {
+    width: 18px;
+    height: 18px;
+  }
+
+  .campaign-close {
+    height: 125px;
+  }
+
+  .campaign-close__inner {
+    padding-top: 18px;
+  }
+
+  .campaign-close__audiences {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .campaign-close__signature {
+    width: 560px;
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .campaign-close__share {
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+
+  .campaign-close__whatsapp {
+    width: 23px;
+    height: 23px;
+  }
+
+  .campaign-footer {
+    min-height: 90px;
+  }
+
+  .campaign-footer__inner {
+    padding-top: 15px;
+  }
+
+  .campaign-footer__contacts {
+    gap: 13px;
+  }
+
+  .campaign-footer__contact {
+    gap: 6px;
+    font-size: 11px;
+    line-height: 15px;
+  }
+
+  .campaign-footer__icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .campaign-footer__separator {
+    height: 14px;
+  }
+
+  .campaign-footer__values,
+  .campaign-footer__thanks {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .campaign-footer__values {
+    margin-top: 12px;
+  }
+
+  .campaign-footer__thanks {
+    margin-top: 6px;
+  }
+}
+
+/* Comfortable phone layout: readable, touch-friendly and scrollable. */
+@media (max-width: 599px) {
+  body {
+    background: #282b7d;
+  }
+
+  .site-header {
+    height: 68px;
+  }
+
+  .site-header__inner {
+    padding: 0 16px;
+  }
+
+  .site-header__logo {
+    width: 148px;
+  }
+
+  .site-header__cta {
+    width: 112px;
+    height: 44px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .campaign-hero {
+    height: 350px;
+  }
+
+  .campaign-hero__mobile-image {
+    left: 42%;
+  }
+
+  .campaign-hero__copy {
+    width: calc(100% - 32px);
+    padding: 18px 0 0 16px;
+  }
+
+  .campaign-hero__kicker {
+    font-size: 12.5px;
+    line-height: 17px;
+  }
+
+  .campaign-hero__statement {
+    margin-top: 14px;
+  }
+
+  .campaign-hero__title {
+    font-size: 32px;
+    letter-spacing: -1px;
+    line-height: 1.08;
+  }
+
+  .campaign-hero__urgency {
+    width: 230px;
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .campaign-hero__cta {
+    width: 220px;
+    height: 50px;
+    margin-top: 18px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  .donation-amounts {
+    height: 80px;
+  }
+
+  .donation-amounts__inner {
+    width: calc(100% - 32px);
+    padding-top: 16px;
+    gap: 8px;
+  }
+
+  .donation-amount {
+    height: 48px;
+    border-radius: 10px;
+  }
+
+  .donation-amount__value {
+    font-size: 13px;
+  }
+
+  .participate {
+    min-height: 0;
+    padding: 28px 0 24px;
+    scroll-margin-top: 68px;
+  }
+
+  .participate__inner {
+    width: calc(100% - 32px);
+  }
+
+  .participate__title {
+    height: 34px;
+    font-size: 27px;
+    line-height: 34px;
+  }
+
+  .participate__cards {
+    margin-top: 22px;
+    gap: 18px;
+  }
+
+  .payment-card,
+  .payment-card--orange {
+    height: 190px;
+    padding: 12px;
+    border-radius: 14px;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .payment-card__mobile-visual {
+    grid-template-columns: 60px 82px;
+    gap: 8px;
+  }
+
+  .payment-brand {
+    height: 100px;
+    border-radius: 9px;
+  }
+
+  .wave-penguin {
+    width: 28px;
+    height: 50px;
+    background-position: -15px -5px;
+    background-size: 136px auto;
+  }
+
+  .wave-word {
+    font-size: 19px;
+    line-height: 21px;
+  }
+
+  .orange-logo {
+    width: 47px;
+    height: 47px;
+  }
+
+  .orange-word {
+    margin-top: -3px;
+    font-size: 10px;
+    line-height: 9.5px;
+  }
+
+  .payment-card__qr {
+    width: 82px;
+    height: 82px;
+    padding: 4px;
+    border-radius: 8px;
+  }
+
+  .payment-card__content {
+    padding-top: 4px;
+  }
+
+  .payment-card__title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .payment-card__description {
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .payment-card__button {
+    width: calc(100% + 162px);
+    height: 44px;
+    margin-top: auto;
+    border-radius: 9px;
+    font-size: 12.5px;
+    white-space: nowrap;
+    transform: translateX(-162px);
+  }
+
+  .participate__bank {
+    margin-top: 18px;
+  }
+
+  .bank-transfer {
+    border-radius: 14px;
+  }
+
+  .bank-transfer__summary {
+    height: 56px;
+    padding: 0 16px;
+  }
+
+  .bank-transfer__label {
+    gap: 12px;
+  }
+
+  .bank-transfer__icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .bank-transfer__bank-svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .bank-transfer__text {
+    font-size: 14px;
+  }
+
+  .bank-transfer__chevron {
+    width: 18px;
+    height: 18px;
+  }
+
+  .bank-transfer__details {
+    padding: 16px 18px 20px 66px;
+    font-size: 14px;
+  }
+
+  .bank-transfer__iban {
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .bank-transfer__copy {
+    min-width: 132px;
+    min-height: 44px;
+    margin-top: 12px;
+    padding: 0 18px;
+    border-width: 2px;
+    font-size: 14px;
+    touch-action: manipulation;
+  }
+
+  .campaign-close {
+    height: auto;
+    min-height: 160px;
+  }
+
+  .campaign-close__inner {
+    padding: 26px 16px 24px;
+  }
+
+  .campaign-close__audiences {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .campaign-close__signature {
+    width: min(100%, 340px);
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .campaign-close__share {
+    gap: 9px;
+    margin-top: 18px;
+    font-size: 14px;
+  }
+
+  .campaign-close__whatsapp {
+    width: 24px;
+    height: 24px;
+  }
+
+  .campaign-footer {
+    height: auto;
+    min-height: 150px;
+  }
+
+  .campaign-footer__inner {
+    padding: 24px 16px 20px;
+  }
+
+  .campaign-footer__contacts {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .campaign-footer__contact {
+    gap: 7px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .campaign-footer__icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .campaign-footer__separator {
+    display: none;
+  }
+
+  .campaign-footer__values,
+  .campaign-footer__thanks {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .campaign-footer__values {
+    margin-top: 20px;
+  }
+
+  .campaign-footer__thanks {
+    margin-top: 7px;
+  }
+}
