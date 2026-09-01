@@ -67,6 +67,10 @@ export const COPY = {
   shareWhatsApp: "Partager cette campagne sur WhatsApp",
   footerValues: "Télé École – Éducation · Innovation · Impact",
   footerThanks: "Merci pour votre soutien.",
+  footerContactTitle: "Contact",
+  contactPhoneLabel: "Téléphone",
+  contactEmailLabel: "Email",
+  contactWebsiteLabel: "Site web",
 } as const;
 
 export const AMOUNTS = [
