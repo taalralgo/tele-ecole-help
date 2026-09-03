@@ -160,16 +160,18 @@ body {
 
 .site-header__cta {
   display: inline-flex;
-  width: 71px;
+  width: auto;
+  min-width: 71px;
   height: 21px;
   align-items: center;
   justify-content: center;
+  padding: 0 8px;
+  border: 1px solid rgb(255 255 255 / 28%);
   border-radius: 5px;
-  background: linear-gradient(135deg, #ffb512 0%, #ff9708 100%);
-  box-shadow: 0 3px 8px rgb(10 12 64 / 20%);
-  color: #fff;
+  background: transparent;
+  color: rgb(255 255 255 / 78%);
   font-size: 8px;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -785,10 +787,12 @@ body {
   }
 
   .site-header__cta {
-    width: 172px;
-    height: 52px;
+    width: auto;
+    min-width: 120px;
+    height: 44px;
+    padding: 0 22px;
     border-radius: 10px;
-    font-size: 17px;
+    font-size: 15px;
     margin-right: 9px;
   }
 
@@ -1350,7 +1354,12 @@ body {
 }
 
 @media (hover: hover) {
-  .site-header__cta:hover,
+  .site-header__cta:hover {
+    border-color: rgb(255 255 255 / 45%);
+    background: rgb(255 255 255 / 7%);
+    color: rgb(255 255 255 / 95%);
+  }
+
   .campaign-hero__cta:hover {
     filter: brightness(1.04);
   }
@@ -1386,10 +1395,12 @@ body {
   }
 
   .site-header__cta {
-    width: 130px;
-    height: 42px;
+    width: auto;
+    min-width: 108px;
+    height: 38px;
+    padding: 0 18px;
     border-radius: 9px;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .campaign-hero {
@@ -1792,10 +1803,12 @@ body {
   }
 
   .site-header__cta {
-    width: 112px;
-    height: 44px;
+    width: auto;
+    min-width: 96px;
+    height: 38px;
+    padding: 0 16px;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .campaign-hero {
@@ -2322,12 +2335,12 @@ body {
   .site-header__cta {
     position: static;
     width: auto;
-    min-width: 132px;
-    height: 40px;
+    min-width: 108px;
+    height: 36px;
     margin: 0;
-    padding: 0 18px;
+    padding: 0 16px;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 13px;
     transform: none;
   }
 
@@ -2525,11 +2538,13 @@ body {
   }
 
   .site-header__cta {
-    width: clamp(108px, 29cqw, 158px);
-    height: clamp(42px, 11cqw, 54px);
+    width: auto;
+    min-width: clamp(96px, 26cqw, 132px);
+    height: clamp(36px, 9.5cqw, 46px);
     margin: 0;
+    padding: 0 clamp(14px, 4cqw, 20px);
     border-radius: 9px;
-    font-size: clamp(13px, 3.6cqw, 18px);
+    font-size: clamp(12px, 3.2cqw, 15px);
     transform: none;
   }
 
