@@ -46,32 +46,30 @@ export function CampaignFooter() {
           </h2>
 
           <div className="campaign-footer__contact-row">
-            {contacts.map(
-              ({ href, label, value, Icon, className, ...item }) => (
-                <a
-                  key={href}
-                  href={href}
-                  className={
-                    className
-                      ? `campaign-footer__contact ${className}`
-                      : "campaign-footer__contact"
-                  }
-                  {...("external" in item && item.external
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                >
-                  <Icon className="campaign-footer__icon" />
-                  <span className="campaign-footer__contact-body">
-                    <span className="campaign-footer__contact-label">
-                      {label}
-                    </span>
-                    <span className="campaign-footer__contact-value">
-                      {value}
-                    </span>
+            {contacts.map((contact) => (
+              <a
+                key={contact.href}
+                href={contact.href}
+                className={
+                  "className" in contact && contact.className
+                    ? `campaign-footer__contact ${contact.className}`
+                    : "campaign-footer__contact"
+                }
+                {...("external" in contact && contact.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
+                <contact.Icon className="campaign-footer__icon" />
+                <span className="campaign-footer__contact-body">
+                  <span className="campaign-footer__contact-label">
+                    {contact.label}
                   </span>
-                </a>
-              ),
-            )}
+                  <span className="campaign-footer__contact-value">
+                    {contact.value}
+                  </span>
+                </span>
+              </a>
+            ))}
           </div>
         </section>
 
