@@ -12,22 +12,21 @@ const contacts = [
     href: SITE.phoneHref,
     label: COPY.contactPhoneLabel,
     value: SITE.phone,
-    external: false,
     Icon: IconPhone,
   },
   {
     href: `mailto:${SITE.email}`,
     label: COPY.contactEmailLabel,
     value: SITE.email,
-    external: false,
     Icon: IconMail,
   },
   {
     href: SITE.url,
     label: COPY.contactWebsiteLabel,
-    value: SITE.url.replace("https://", ""),
-    external: true,
+    value: COPY.footerFollowWebsite,
     Icon: IconGlobe,
+    className: "campaign-footer__contact--website",
+    external: true,
   },
 ] as const;
 
@@ -46,13 +45,18 @@ export function CampaignFooter() {
             {COPY.footerContactTitle}
           </h2>
 
-          <ul className="campaign-footer__contact-list">
-            {contacts.map(({ href, label, value, external, Icon }) => (
-              <li key={href}>
+          <div className="campaign-footer__contact-row">
+            {contacts.map(
+              ({ href, label, value, Icon, className, ...item }) => (
                 <a
+                  key={href}
                   href={href}
-                  className="campaign-footer__contact"
-                  {...(external
+                  className={
+                    className
+                      ? `campaign-footer__contact ${className}`
+                      : "campaign-footer__contact"
+                  }
+                  {...("external" in item && item.external
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
                 >
@@ -66,15 +70,49 @@ export function CampaignFooter() {
                     </span>
                   </span>
                 </a>
-              </li>
-            ))}
+              ),
+            )}
+          </div>
+        </section>
+
+        <section
+          className="campaign-footer__follow-block"
+          aria-labelledby="footer-follow-title"
+        >
+          <h3 id="footer-follow-title" className="campaign-footer__follow-title">
+            {COPY.footerFollowTitle}
+          </h3>
+
+          <ul className="campaign-footer__follow-list">
+            <li>{COPY.footerFollowTnt}</li>
+            <li>{COPY.footerFollowOrange}</li>
+            <li>
+              <span className="campaign-footer__follow-lead">
+                {COPY.footerFollowApps} :
+              </span>{" "}
+              <a
+                href={SITE.apps.playStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="campaign-footer__follow-link"
+              >
+                {COPY.footerFollowPlayStore}
+              </a>
+              <span aria-hidden="true"> / </span>
+              <a
+                href={SITE.apps.appStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="campaign-footer__follow-link"
+              >
+                {COPY.footerFollowAppStore}
+              </a>
+            </li>
+            <li>{COPY.footerFollowIptv}</li>
           </ul>
         </section>
 
-        <nav
-          className="campaign-footer__socials"
-          aria-label="Réseaux sociaux"
-        >
+        <nav className="campaign-footer__socials" aria-label="Réseaux sociaux">
           <a
             href={SITE.socials.facebook}
             target="_blank"

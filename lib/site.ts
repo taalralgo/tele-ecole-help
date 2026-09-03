@@ -24,10 +24,15 @@ export const SITE = {
   canonical: resolveCampaignUrl(),
   description:
     "Télé École a brûlé. Participez à la reconstruction de la 1re télévision éducative d'Afrique via Wave, Orange Money ou virement bancaire.",
-  phone: "+221 33 867 06 07",
-  phoneHref: "tel:+221338670607",
+  phone: "+221 77 512 27 02",
+  phoneHref: "tel:+221775122702",
   email: "info@tele-ecole.tv",
   address: "Sicap Sacré Cœur 3, Villa N° 10010, Dakar",
+  apps: {
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.acan.teleecole",
+    appStore: "https://apps.apple.com/app/id1481618988",
+  },
   socials: {
     facebook: "https://www.facebook.com/teleecole/",
     instagram: "https://www.instagram.com/tele_ecole",
@@ -71,6 +76,14 @@ export const COPY = {
   contactPhoneLabel: "Téléphone",
   contactEmailLabel: "Email",
   contactWebsiteLabel: "Site web",
+  footerFollowTitle: "Vous pouvez nous suivre :",
+  footerFollowTnt: "TNT canal 20",
+  footerFollowOrange: "TV d'Orange : N°44",
+  footerFollowApps: "Applis mobiles",
+  footerFollowPlayStore: "Play Store",
+  footerFollowAppStore: "Apple Store",
+  footerFollowIptv: "Les IPTV Partout",
+  footerFollowWebsite: "www.tele-ecole.tv",
 } as const;
 
 export const AMOUNTS = [
