@@ -71,45 +71,11 @@ await sharp(campaignLogo.data, {
 const { writeFavicons } = await import("./extract-favicon.mjs");
 await writeFavicons();
 
-// Crop the hero photo panel from the validated desktop mockup (right column).
-await sharp(path.join(root, "design-reference/mockups/desktop.png"))
-  .extract({ left: 780, top: 120, width: 680, height: 345 })
-  .webp({ quality: 88 })
-  .toFile(path.join(root, "public/campaign/hero-approved.webp"));
-
-// OG image from official poster (JPG for Teams/LinkedIn, WebP for the site)
-const ogSource = path.join(root, "design-reference/source/help.jpeg");
-const ogExists = await import("node:fs/promises").then(({ access }) =>
-  access(ogSource).then(() => true).catch(() => false),
-);
-
-if (ogExists) {
-  await sharp(ogSource)
-    .resize(1200, 630, { fit: "cover", position: "centre" })
-    .jpeg({ quality: 88 })
-    .toFile(path.join(root, "public/campaign/og.jpg"));
-
-  await sharp(ogSource)
-    .resize(1200, 630, { fit: "cover", position: "centre" })
-    .webp({ quality: 85 })
-    .toFile(path.join(root, "public/campaign/og.webp"));
-} else {
-  await sharp(path.join(root, "public/campaign/og.webp"))
-    .jpeg({ quality: 88 })
-    .toFile(path.join(root, "public/campaign/og.jpg"));
-}
-
 // Square crop of Wave QR for card display
 await sharp(path.join(root, "design-reference/source/qrcode_wave.jpeg"))
   .extract({ left: 72, top: 322, width: 496, height: 496 })
   .jpeg({ quality: 95 })
   .toFile(path.join(root, "public/qr/wave-card.jpeg"));
-
-await sharp(path.join(root, "design-reference/source/qrcode_wave.jpeg"))
-  .extract({ left: 34, top: 24, width: 568, height: 238 })
-  .resize({ width: 284 })
-  .webp({ quality: 90 })
-  .toFile(path.join(root, "public/brand/wave.webp"));
 
 await sharp(
   path.join(root, "design-reference/source/qrcode_orange_money.jpeg"),
@@ -119,4 +85,4 @@ await sharp(
   .webp({ quality: 92 })
   .toFile(path.join(root, "public/brand/orange-money.webp"));
 
-console.log("Hero and OG assets generated.");
+console.log("Hero assets generated.");
