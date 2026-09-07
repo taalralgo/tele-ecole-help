@@ -33,6 +33,18 @@ NEXT_PUBLIC_CAMPAIGN_URL=https://votre-domaine.example
 
 Cette valeur sert également d’URL canonique pour les métadonnées.
 
+## Assets campagne
+
+Les visuels (hero, QR, favicons) sont générés depuis les sources dans `design-reference/source/`.
+
+```bash
+npm run assets:hero   # hero, logo, favicons, QR Wave mobile
+npm run assets:qr     # décode les QR et met à jour lib/payments.ts
+npm run assets        # les deux
+```
+
+Voir `design-reference/README.md` pour le détail des fichiers source, des assets publics et de l’orthographe « A brûlé » (sans accent sur le A).
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
