@@ -13,7 +13,7 @@ export function Hero() {
             Télé École a brûlé. Nous allons la reconstruire.
           </h1>
           <Image
-            src="/campaign/hero-title.webp?v=2"
+            src="/campaign/hero-title.webp"
             alt=""
             aria-hidden="true"
             width={770}
